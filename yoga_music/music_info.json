@@ -1,0 +1,22 @@
+{
+  "tracks": [
+    {
+      "name": "Gentle Yoga Flow",
+      "file": "gentle_yoga_flow.mp3",
+      "duration": "10:00",
+      "description": "Soothing instrumental music perfect for yoga practice"
+    },
+    {
+      "name": "Meditation Sounds",
+      "file": "meditation_sounds.mp3",
+      "duration": "15:00",
+      "description": "Peaceful nature sounds with gentle background music"
+    },
+    {
+      "name": "Zen Garden",
+      "file": "zen_garden.mp3",
+      "duration": "12:00",
+      "description": "Calming Japanese-inspired meditation music"
+    }
+  ]
+}

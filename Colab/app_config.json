@@ -1,0 +1,17 @@
+{
+  "app_name": "Yoga Belly Fat Loss",
+  "package_name": "com.yoga.bellyfat",
+  "version": "1.0",
+  "description": "Vegan-friendly yoga app for belly fat loss",
+  "author": "Yoga App Developer",
+  "orientation": "portrait",
+  "permissions": [
+    "android.permission.INTERNET"
+  ],
+  "features": [
+    "Yoga pose instructions",
+    "Timer functionality",
+    "Vegan diet tips",
+    "Complete workout routine"
+  ]
+}

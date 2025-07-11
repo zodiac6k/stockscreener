@@ -1,0 +1,76 @@
+# Cell 1: Setup
+import os
+from anthropic import Anthropic
+from dotenv import load_dotenv
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load API key
+load_dotenv()
+client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
+# Cell 2: Define helper functions
+def ask_claude(question, model="claude-3-sonnet-20240229"):
+    """Ask Claude a question and return the response"""
+    response = client.messages.create(
+        model=model,
+        max_tokens=1000,
+        messages=[{"role": "user", "content": question}]
+    )
+    return response.content[0].text
+
+def code_review(code):
+    """Get code review from Claude"""
+    prompt = f"""Please review this Python code and provide suggestions for improvement:
+
+```python
+{code}
+```
+
+Focus on:
+- Code quality and readability
+- Performance optimizations
+- Best practices
+- Potential bugs
+"""
+    return ask_claude(prompt)
+
+# Cell 3: Example usage
+# Ask Claude to explain a Python concept
+explanation = ask_claude("Explain Python list comprehensions with examples")
+print(explanation)
+
+# Cell 4: Code review example
+sample_code = """
+numbers = [1, 2, 3, 4, 5]
+squared = []
+for num in numbers:
+    squared.append(num * num)
+print(squared)
+"""
+
+review = code_review(sample_code)
+print("Code Review:")
+print(review)
+
+# Cell 5: Interactive data analysis with Claude
+# Generate sample data
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana'],
+    'age': [25, 30, 35, 28],
+    'salary': [50000, 60000, 70000, 55000]
+}
+df = pd.DataFrame(data)
+
+# Ask Claude to analyze the data
+analysis_request = f"""
+Analyze this dataset and provide insights:
+
+{df.to_string()}
+
+What patterns do you see? What questions might be worth exploring?
+"""
+
+analysis = ask_claude(analysis_request)
+print("Data Analysis:")
+print(analysis)

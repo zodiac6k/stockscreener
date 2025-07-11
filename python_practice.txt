@@ -1,0 +1,3 @@
+Hello, Python!
+This is a practice file.
+Learning is fun!
