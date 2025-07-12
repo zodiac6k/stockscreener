@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Streamlit logs and cache
+.streamlit/
+*.log
+
+# VS Code workspace settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Data files (optional)
+*.csv
+*.xlsx
